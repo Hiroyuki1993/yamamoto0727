@@ -1,4 +1,4 @@
-p = [0.1, 0.2, 0.5, 0.2];
+p = [0.5, 0.2, 0.1, 0.2];
 n = length(p);
 words = {'book', 'banana', 'apple', 'miso'};
 bar(p)

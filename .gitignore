@@ -3,4 +3,4 @@
 *.RData
 .Ruserdata
 *.zip
-
+.ipynb_checkpoints/

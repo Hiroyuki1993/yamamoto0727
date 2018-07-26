@@ -4,17 +4,16 @@ x2 = linspace(0.01, 1, 101);
 [X1, X2] = ndgrid(x1, x2);
 X3 = 1 - X1 - X2;
 bad = (X1 + X2 > 1);
-#X1(bad) = NaN;
-#X2(bad) = NaN;
-#X3(bad) = NaN;
+X1(bad) = NaN;
+X2(bad) = NaN;
+X3(bad) = NaN;
 
 betaConst = exp(sum(gammaln(alpha))-gammaln(sum(alpha)));
 F = (X1.^(alpha(1)-1) .* X2.^(alpha(2)-1) .* X3.^(alpha(3)-1)) / betaConst;
-F(bad) = -10;
 
-#figure, surf(X1, X2, F, 'EdgeColor', 'none');
-#grid off;
-contourf(X1, X2, F)
+figure, surf(X1, X2, F, 'EdgeColor', 'none');
+grid off;
+#contourf(X1, X2, F)
 colorbar;
 xlabel('x1', 'fontsize', 20);
 ylabel('x2', 'fontsize', 20);
